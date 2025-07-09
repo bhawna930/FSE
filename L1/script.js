@@ -169,7 +169,19 @@ async function fetchdataproduct() {
 
   data.products.forEach(product => {
     const card = document.createElement('div');
-    
+    card.classList.add('product-card');
+
+    const img = document.createElement('img');
+    img.src = product.thumbnail;
+    img.alt = product.title;
+
+    const price = document.createElement('p');
+    price.innerText = `Price: $${product.price}`;
+
+    card.appendChild(img);
+    card.appendChild(price);
+
+    container.appendChild(card);
   });
 }
 
